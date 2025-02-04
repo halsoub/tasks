@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class BottomNavExample extends StatefulWidget {
-  const BottomNavExample({Key? key}) : super(key: key);
+class Task1 extends StatefulWidget {
+  const Task1({Key? key}) : super(key: key);
 
   @override
-  State<BottomNavExample> createState() => _BottomNavExampleState();
+  State<Task1> createState() => _Task1State();
 }
 
-class _BottomNavExampleState extends State<BottomNavExample> {
+class _Task1State extends State<Task1> {
   int _selectedIndex = 0;
 
   static final List<Widget> _widgetOptions = <Widget>[
