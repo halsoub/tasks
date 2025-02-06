@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tasks/tasks/task1.dart';
 
+import 'tasks/task5.dart';
+
 void main() {
   runApp(const MainApp());
 }
@@ -10,8 +12,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      home: Task1(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Task5(),
     );
   }
 }
