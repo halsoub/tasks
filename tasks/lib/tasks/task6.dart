@@ -1,7 +1,6 @@
-// Task6 login page
-
 import 'package:flutter/material.dart';
 
+// sign up page ...
 class Task6 extends StatefulWidget {
   const Task6({super.key});
 
@@ -10,153 +9,75 @@ class Task6 extends StatefulWidget {
 }
 
 class _Task6State extends State<Task6> {
-  // ***************************************** this part is for the login page data and validation
-  // email TextEditingController
-  final TextEditingController _emailController = TextEditingController();
-  // password TextEditingController
-  final TextEditingController _passwordController = TextEditingController();
-  // form key
-  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    // padding -> single child scroll view -> form -> column -> [text form filed email , text form filed password ,  login button]
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login Page'),
+        title: Text("Sign Up", style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.orange,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Form(
-            key: _formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 50,
+        padding: EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: 15),
+            TextField(
+              decoration: InputDecoration(
+                labelText: "Full Name",
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(
+                  Icons.person,
+                  color: Colors.orange,
                 ),
-                // network image logo (url https://www.google.com/url?sa=i&url=https%3A%2F%2Ffreelogopng.com%2Forange-logo-png&psig=AOvVaw0CgNMykY8e5Bct9XNHa_e5&ust=1738913683845000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCODunLXErosDFQAAAAAdAAAAABAP)
-                Image.network(
-                  'https://1000logos.net/wp-content/uploads/2017/04/Orange-Logo.png',
-                  height: 200,
-                  width: 200,
-                ),
-                // sized box height 16
-                SizedBox(
-                  height: 16,
-                ),
-                // text form field email
-                TextFormField(
-                  controller: _emailController,
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    prefixIcon: Icon(
-                      Icons.email,
-                      color: Colors.deepOrange,
-                    ),
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                // sized box height 16
-                SizedBox(
-                  height: 16,
-                ),
-                // text form field password //
-                TextFormField(
-                  controller: _passwordController,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    prefixIcon: Icon(
-                      Icons.lock,
-                      color: Colors.deepOrange,
-                    ),
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                // sized box height 16
-                SizedBox(
-                  height: 16,
-                ),
-                // login button (Elivated Button , onpressed -> validate -> if valid -> show snackbar with login successfuly , else show snackbar with error)
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState?.validate() ?? false) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            backgroundColor: Colors.deepOrange,
-                            content: Text(
-                              'Login Successfuly and Navigate to Home Page',
-                              style: TextStyle(fontSize: 18),
-                            ),
-                          ),
-                        );
-                      } else {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('Error'),
-                          ),
-                        );
-                      }
-                    },
-                    // button style -> backgroundColor deep orange and padding vertical 15 horizontal 30 radius 20
-                    style: ElevatedButton.styleFrom(
-                      //primary: Colors.white,
-                      backgroundColor: Colors.deepOrange,
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 15,
-                        horizontal: 30,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    ),
-                    child: Text(
-                      'Login',
-                      style: TextStyle(fontSize: 18, color: Colors.white),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 16,
-                ),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          backgroundColor: Colors.deepOrange,
-                          content: Text(
-                            'Navigate to Sign Up Page',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                        ),
-                      );
-                    },
-                    // button style -> backgroundColor deep orange and padding vertical 15 horizontal 30 radius 20
-                    style: ElevatedButton.styleFrom(
-                      //primary: Colors.white,
-                      backgroundColor: Colors.deepOrange,
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 15,
-                        horizontal: 30,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    ),
-                    child: Text(
-                      'Sign Up',
-                      style: TextStyle(fontSize: 18, color: Colors.white),
-                    ),
-                  ),
-                ),
-              ],
+              ),
+              keyboardType: TextInputType.text,
             ),
-          ),
+            SizedBox(height: 20),
+            TextField(
+              decoration: InputDecoration(
+                labelText: "Email",
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.email, color: Colors.orange),
+              ),
+              keyboardType: TextInputType.emailAddress,
+            ),
+            SizedBox(height: 20),
+            TextField(
+              decoration: InputDecoration(
+                labelText: "Phone Number",
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.phone, color: Colors.orange),
+              ),
+              keyboardType: TextInputType.phone,
+            ),
+            SizedBox(height: 20),
+            TextField(
+              decoration: InputDecoration(
+                labelText: "Password",
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.lock, color: Colors.orange),
+              ),
+              obscureText: true,
+            ),
+            SizedBox(height: 20),
+            TextField(
+              decoration: InputDecoration(
+                labelText: "Confirm Password",
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.lock, color: Colors.orange),
+              ),
+              obscureText: true,
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.orange,
+              ),
+              child: Text("Sign Up"),
+            ),
+          ],
         ),
       ),
     );
