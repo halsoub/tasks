@@ -1,15 +1,15 @@
-// Task6 login page
+// Task5 login page
 
 import 'package:flutter/material.dart';
 
-class Task6 extends StatefulWidget {
-  const Task6({super.key});
-
+class Task5 extends StatefulWidget {
+  const Task5({super.key});
+//
   @override
-  State<Task6> createState() => _Task6State();
+  State<Task5> createState() => _Task5State();
 }
 
-class _Task6State extends State<Task6> {
+class _Task5State extends State<Task5> {
   // ***************************************** this part is for the login page data and validation
   // email TextEditingController
   final TextEditingController _emailController = TextEditingController();
@@ -134,7 +134,7 @@ class _Task6State extends State<Task6> {
                             style: TextStyle(fontSize: 18),
                           ),
                         ),
-                      );
+                      ); //
                     },
                     // button style -> backgroundColor deep orange and padding vertical 15 horizontal 30 radius 20
                     style: ElevatedButton.styleFrom(
