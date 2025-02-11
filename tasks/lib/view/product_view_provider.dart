@@ -1,15 +1,33 @@
-import "package:flutter/material.dart";
-import "package:provider/provider.dart";
-import "../models/product.dart";
-import "../provider/product_provder.dart";
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class ProductViewWidget extends StatelessWidget {
+import '../models/product.dart';
+import '../provider/product_provder.dart';
+
+class ProductViewWidget extends StatefulWidget {
   const ProductViewWidget({super.key});
+
+  @override
+  State<ProductViewWidget> createState() => _ProductViewWidgetState();
+}
+
+class _ProductViewWidgetState extends State<ProductViewWidget> {
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<ProductProvider>(context, listen: false).fetchAllProducts();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Product View Widget"),
+      ),
       body: Consumer<ProductProvider>(
         builder: (context, productProvider, child) {
+          // fixed
           if (productProvider.isLoading) {
             return const Center(child: CircularProgressIndicator());
           } else if (productProvider.errorMessage != null) {
@@ -17,6 +35,7 @@ class ProductViewWidget extends StatelessWidget {
           } else if (productProvider.products.isEmpty) {
             return const Center(child: Text("No products available"));
           }
+
           return ListView.builder(
             itemCount: productProvider.products.length,
             itemBuilder: (context, index) {
