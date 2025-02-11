@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 import '../models/product.dart';
-// ********************************************************************************** 1 (import http)
+// **************************** 1 (import http)
 import 'package:http/http.dart' as http;
 
 // Product List Screen
@@ -13,10 +13,10 @@ class ProductListScreen extends StatefulWidget {
 }
 
 class _ProductListScreenState extends State<ProductListScreen> {
-  // ******************************************************************************* 2 (list of (x) )
+  // *************************** 2 (list of (x) )
   late Future<List<Product>> futureProducts;
 
-  // ******************************************************************************* 4 Function to Fetch Products
+  // *************************** 4 Function to Fetch Products
   Future<List<Product>> fetchAllProducts() async {
     // 1
     final response = await http.get(
@@ -36,7 +36,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
   @override
   void initState() {
     super.initState();
-    // ***************************************************************************** 3 (initialize late future value)
+    // *************************** 3 (initialize late future value)
     futureProducts = fetchAllProducts();
   }
 
