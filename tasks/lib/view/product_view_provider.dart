@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tasks/view/details.dart';
 
 import '../models/product.dart';
 import '../provider/product_provder.dart';
@@ -58,6 +59,13 @@ class _ProductViewWidgetState extends State<ProductViewWidget> {
                       Text(product.rating?.rate?.toStringAsFixed(1) ?? "N/A"),
                     ],
                   ),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Details(product: product),
+                        ));
+                  },
                 ),
               );
             },
