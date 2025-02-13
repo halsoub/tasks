@@ -11,21 +11,23 @@ class Details extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(250, 250, 250, 1),
+      backgroundColor: Color.fromRGBO(245, 245, 245, 1),
       // 1 title  text
       appBar: AppBar(title: Text("${product.title}")),
       // 2 image image . network
       body: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.symmetric(horizontal: 12),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.network(
               width: width,
-              height: height * 0.3,
+              height: height * 0.4,
               "${product.image}",
+              fit: BoxFit.fill,
             ),
             const SizedBox(
-              height: 25,
+              height: 20,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -41,7 +43,14 @@ class Details extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
+            ),
+            Text(
+              "${product.category}",
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             Text(
               "${product.description}",
@@ -51,19 +60,10 @@ class Details extends StatelessWidget {
               height: 20,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    const Icon(Icons.star, color: Colors.orange, size: 22),
-                    Text(product.rating?.rate?.toStringAsFixed(1) ?? "N/A"),
-                  ],
-                ),
-                Text(
-                  "${product.category}",
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
-                ),
+                const Icon(Icons.star, color: Colors.orange, size: 22),
+                Text(product.rating?.rate?.toStringAsFixed(1) ?? "N/A"),
               ],
             ),
           ],
