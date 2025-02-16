@@ -59,6 +59,6 @@ class _Task8State extends State<Task8> {
         appBar: AppBar(
           title: Text("Async real example using postman"),
         ),
-        body: Container());
+        body: Scaffold());
   }
 }
