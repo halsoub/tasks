@@ -1,4 +1,4 @@
-// SliverAppBar
+// SliverAppBar4
 import 'package:flutter/material.dart';
 
 class Task4 extends StatelessWidget {
@@ -14,8 +14,7 @@ class Task4 extends StatelessWidget {
             floating: false,
             expandedHeight: 300,
             flexibleSpace: FlexibleSpaceBar(
-              title: const Text('SliverAppBar Example',
-                  style: TextStyle(color: Colors.black)),
+              title: const Text('SliverAppBar Example', style: TextStyle(color: Colors.black)),
               background: Image.network(
                 'https://media.istockphoto.com/id/1412131208/vector/abstract-orange-and-red-gradient-geometric-shape-circle-background-modern-futuristic.jpg?s=612x612&w=0&k=20&c=V_It1LyqTdBTOvCY8-CBOOj4bh4sFOq8im9gTlHUfPo=',
                 fit: BoxFit.cover,
