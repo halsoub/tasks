@@ -1,4 +1,4 @@
-// home page
+//7 home page
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -19,8 +19,7 @@ class _Task7State extends State<Task7> {
     // await response from the API
     //var response = await https request (uri)
     // when response ready call setState (repaint the widget or screen with the response)
-    await Future.delayed(
-        const Duration(seconds: 3)); // Correct usage of Future.delayed
+    await Future.delayed(const Duration(seconds: 3)); // Correct usage of Future.delayed
     if (mounted) {
       // Important: Check if the widget is still mounted
       setState(() {
@@ -37,7 +36,7 @@ class _Task7State extends State<Task7> {
   // }
   /// void fetchProducts() async {
   /// var response = await https(uri)
-  /// update data (listOfProducts) or Widgets 
+  /// update data (listOfProducts) or Widgets
   /// }
   @override
   void initState() {
