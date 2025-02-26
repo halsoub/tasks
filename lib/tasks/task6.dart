@@ -1,4 +1,4 @@
-// task6 signup page
+// 6 signup page
 import 'package:flutter/material.dart';
 
 class Task6 extends StatefulWidget {
@@ -22,8 +22,7 @@ class _Task6State extends State<Task6> {
   final TextEditingController _passwordController = TextEditingController();
 
   // confirm password controller
-  final TextEditingController _confirmPasswordController =
-      TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
   // form key
   final _formKey = GlobalKey<FormState>();
   @override
