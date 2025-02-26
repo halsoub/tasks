@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 import '../models/product.dart';
-// **************************** 1 (import http)
+// 11**************************** 1 (import http)
 import 'package:http/http.dart' as http;
 
 // Product List Screen
@@ -21,13 +21,12 @@ class _ProductListScreenState extends State<ProductListScreen> {
   // *************************** 4 Function to Fetch Products
   Future<List<Product>> fetchAllProducts() async {
     // 1
-    final response = await http.get(
-        Uri.parse('https://fakestoreapi.com/products')); // hold response value
+    final response =
+        await http.get(Uri.parse('https://fakestoreapi.com/products')); // hold response value
     // 2
     if (response.statusCode == 200) {
       // 3
-      List<dynamic> jsonData =
-          json.decode(response.body); // (temp box decode response)
+      List<dynamic> jsonData = json.decode(response.body); // (temp box decode response)
       //4 finaly
       return jsonData.map((item) => Product.fromJson(item)).toList();
     } else {
@@ -73,14 +72,12 @@ class _ProductListScreenState extends State<ProductListScreen> {
                   leading: Image.network(products[index].image ?? "",
                       width: 50, height: 50, fit: BoxFit.cover),
                   title: Text(products[index].title ?? "No Title"),
-                  subtitle:
-                      Text("\$${products[index].price?.toStringAsFixed(2)}"),
+                  subtitle: Text("\$${products[index].price?.toStringAsFixed(2)}"),
                   trailing: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Icon(Icons.star, color: Colors.orange, size: 20),
-                      Text(products[index].rating?.rate?.toStringAsFixed(1) ??
-                          "N/A"),
+                      Text(products[index].rating?.rate?.toStringAsFixed(1) ?? "N/A"),
                     ],
                   ),
                 ),
