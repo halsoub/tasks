@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import http
+// import http10
 import 'package:http/http.dart' as http;
 
 class Task10 extends StatefulWidget {
@@ -13,8 +13,7 @@ class _Task8State extends State<Task10> {
   String sample = "";
 
   void fetchAllProducts() async {
-    var request = http.Request(
-        'GET', Uri.parse('https://jsonplaceholder.typicode.com/posts'));
+    var request = http.Request('GET', Uri.parse('https://jsonplaceholder.typicode.com/posts'));
 
     http.StreamedResponse response = await request.send();
 
