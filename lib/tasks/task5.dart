@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'task6.dart';
 import 'task7.dart';
+
 // import 'package:tasks/tasks/task6.dart';
 // import 'package:tasks/tasks/task7.dart';
-
+// 5
 class Task5 extends StatefulWidget {
   const Task5({super.key});
 
@@ -24,10 +25,7 @@ class _Task5 extends State<Task5> {
               Icon(Icons.arrow_upward, size: 30, color: Colors.orange),
               SizedBox(width: 6),
               Text("Orange Money",
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white)),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
             ],
           ),
         ),
@@ -144,9 +142,7 @@ class _Task5 extends State<Task5> {
                   SizedBox(height: 4),
                   Text("Face ID",
                       style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black)),
+                          fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
                 ],
               )
             ],
