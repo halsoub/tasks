@@ -12,12 +12,9 @@ class _Task1State extends State<Task1> {
   int _selectedIndex = 0;
 
   static final List<Widget> _widgetOptions = <Widget>[
-    Container(
-        color: Colors.deepOrange, child: const Center(child: Text('Home Page'))),
-    Container(
-        color: Colors.greenAccent, child: const Center(child: Text('Search Page'))),
-    Container(
-        color: Colors.amberAccent, child: const Center(child: Text('Profile Page'))),
+    Container(color: Colors.deepOrange, child: const Center(child: Text('Home Page'))),
+    Container(color: Colors.greenAccent, child: const Center(child: Text('Search Page'))),
+    Container(color: Colors.amberAccent, child: const Center(child: Text('Profile Page'))),
   ];
 
   void _onItemTapped(int index) {
