@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import http
+// import http8
 import 'package:http/http.dart' as http;
 
 class Task8 extends StatefulWidget {
@@ -15,8 +15,7 @@ class _Task8State extends State<Task8> {
   //void fetchAllProducts()async {}
   void fetchAllProducts() async {
     // ************************************** past code from postman (implementation)2
-    var request =
-        http.Request('GET', Uri.parse('https://fakestoreapi.com/products'));
+    var request = http.Request('GET', Uri.parse('https://fakestoreapi.com/products'));
 
     http.StreamedResponse response = await request.send();
 
